@@ -12,7 +12,7 @@ export default function App() {
   return (
     <div className="flex h-screen bg-background overflow-hidden">
       <Sidebar />
-      <main className="flex flex-col w-full overflow-auto max-sm:w-full">
+      <main className="flex flex-col w-full overflow-auto overflow-x-hidden max-sm:w-full">
         <Hero />
         <About />
         <Skills />

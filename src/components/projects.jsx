@@ -16,7 +16,14 @@ export default function Projects() {
       title: "Portfolio Website",
       description: "Portfolio website that gives information about skills, projects, contact, etc.",
       tags: ["Javascript", "HTML", "CSS", "Typescript"],
-      url: "https://dr-favour-portfolio.vercel.app/",
+      url: "https://drfavour.vercel.app/",
+    },
+    {
+      image: "Screenshot 2025-11-28 131830.png",
+      title: "AI HealthAssistant",
+      description: "Portfolio website that gives information about skills, projects, contact, etc.",
+      tags: ["AI & LLM Integration", "FastApi", "Javascript", "HTML", "CSS", "Python", "MySQL"],
+      url: "https://health-assistance-frontend.vercel.app",
     },
     {
       image: "Screenshot 2025-11-14 023050.png",

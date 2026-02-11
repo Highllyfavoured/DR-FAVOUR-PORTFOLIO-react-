@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* Import the animation library directly in CSS */
+@plugin "tailwindcss-animate";

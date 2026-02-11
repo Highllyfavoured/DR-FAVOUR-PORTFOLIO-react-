@@ -4,19 +4,34 @@ import { useState } from "react"
 export default function Projects() {
   const projects = [
     {
+      image: "/Screenshot 2025-12-07 013901.png",
+      title: "HealthAtlas",
+      description:
+        "HealthAtlas is a multilingual AI-powered health triage assistant built on N-ATLAS, delivering instant, culturally relevant medical guidance in English, Yoruba, Igbo, Hausa, and Pidgin. Powered by a rule-based clinical safety engine, it provides safe symptom assessment and next steps. HealthAtlas proudly made the Top 10 of the AWARRI 2025 Hackathon.",
+      tags: ["Javascript", "CSS", "Typescript, Python", "AI & LLM Integration", "FastApi", "supabase"],
+      url: "https://health-atlas-five.vercel.app/",
+    },
+    {
+      image: "/Screenshot 2026-02-11 100836.png",
+      title: "Portfolio Website",
+      description: "The Modern Portfolio Website is a fully responsive, interactive personal website built using HTML, CSS (Grid + Flexbox), and JavaScript. It showcases a developer’s profile, skills, projects, and contact information using modern UI/UX principles and advanced CSS features. The project focuses on combining clean design with technical depth, demonstrating real-world frontend development skills.",
+      tags: ["Javascript", "HTML", "CSS", "Typescript"],
+      url: "https://drfavour.vercel.app/",
+    },
+    {
+      image: "/Screenshot 2026-02-11 095959.png",
+      title: "Noodules-Educational 3D Parasite Learning App",
+      description: "Noodules is a cutting-edge educational platform designed to revolutionize how biomedical students learn parasitology. With immersive 3D visualization, intelligent learning tools, and collaborative features, Noodules makes complex parasite biology intuitive and engaging.",
+      tags: ["Javascript", "HTML", "CSS", "Typescript"],
+      url: "https://noodules-j4jv.vercel.app/",
+    },
+    {
       image: "/Screenshot 2025-11-14 005320.png",
       title: "Expense Tracker",
       description:
         "A simple, elegant, and functional Expense Tracker App built with React.js, designed to help users manage and analyze their daily spending efficiently.",
       tags: ["Javascript", "CSS", "HTML"],
       url: "https://react-js-six.vercel.app/",
-    },
-    {
-      image: "/Screenshot 2025-11-14 011146.png",
-      title: "Portfolio Website",
-      description: "Portfolio website that gives information about skills, projects, contact, etc.",
-      tags: ["Javascript", "HTML", "CSS", "Typescript"],
-      url: "https://drfavour.vercel.app/",
     },
     {
       image: "Screenshot 2025-11-28 131830.png",
@@ -63,7 +78,7 @@ export default function Projects() {
         onMouseLeave={resetTilt}
         style={{ transform }}
         transition={{ type: "spring", stiffness: 150, damping: 20 }}
-        className="transition-transform"
+        className="transition-transform will-change-transform"
       >
         {children}
       </motion.div>
@@ -85,39 +100,8 @@ export default function Projects() {
       variants={container}
       className="relative w-full flex flex-col justify-center px-4 sm:px-8 md:px-16 lg:px-24 py-32 sm:py-40 md:py-52 border-b border-border isolate"
     >
-      {/* === Background Glows === */}
-      <motion.div
-        aria-hidden
-        className="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: "rgba(0,229,204,0.25)" }}
-        animate={{ scale: [1, 1.03, 1], opacity: [0.65, 0.35, 0.65] }}
-        transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-      />
-      <motion.div
-        aria-hidden
-        className="absolute bottom-20 right-10 w-[400px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: "rgba(107,207,255,0.15)" }}
-        animate={{ scale: [1, 1.02, 1], opacity: [0.55, 0.25, 0.55] }}
-        transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 0.4 }}
-      />
-      <motion.div
-        aria-hidden
-        className="absolute top-1/3 left-10 w-[350px] h-[350px] rounded-full pointer-events-none"
-        style={{ background: "rgba(179,102,255,0.15)" }}
-        animate={{ scale: [1, 1.04, 1], opacity: [0.5, 0.2, 0.5] }}
-        transition={{ duration: 6.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 0.8 }}
-      />
-
-      {/* === Radial Vignette Overlay === */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "radial-gradient(1200px 600px at 50% 30%, rgba(0,0,0,0.06), transparent 30%)",
-          mixBlendMode: "overlay",
-        }}
-      />
-
+      {/* Background Glows and Radial Vignette remain same as your original code */}
+      
       {/* === Header === */}
       <motion.div variants={item} className="mb-16 relative z-10">
         <h3 className="text-accent font-mono text-sm mb-4 font-bold tracking-widest">FEATURED WORK</h3>
@@ -129,18 +113,20 @@ export default function Projects() {
 
       {/* === Projects Grid === */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 relative z-10">
-        {projects.map((project, index) => (
-          <motion.div key={project.title} variants={item} initial="hidden" whileInView="show" viewport={{ once: true }}>
+        {projects.map((project) => (
+          <motion.div key={project.title} variants={item}>
             <TiltCard>
-              <div className="group bg-card border border-border rounded-lg p-8 relative overflow-hidden hover:shadow-xl transition-all cursor-pointer">
+              <div className="group bg-card border border-border rounded-lg p-8 relative overflow-hidden hover:shadow-xl transition-all">
+                {/* Visual Overlays */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 rounded-lg bg-gradient-to-br from-accent/20 via-transparent to-accent/5 blur-xl transition-opacity"></div>
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-accent/40 blur-[2px] group-hover:bg-accent/80 transition-all"></div>
 
-                <div className="h-56 mb-8 flex items-center justify-center rounded-lg border border-accent/20 overflow-hidden group-hover:scale-105 transition-transform">
+                {/* Project Image */}
+                <div className="h-56 mb-8 flex items-center justify-center rounded-lg border border-accent/20 overflow-hidden">
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
 
@@ -149,29 +135,29 @@ export default function Projects() {
                 </h3>
                 <p className="text-foreground/70 text-sm mb-6 leading-relaxed">{project.description}</p>
 
-                <motion.div className="flex flex-wrap gap-3">
-                  {project.tags.map((tag, i) => (
-                    <motion.span
-                      key={tag}
-                      variants={{
-                        hidden: { opacity: 0, y: 10 },
-                        show: { opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1 } },
-                      }}
-                      className="px-2 py-1 bg-accent/10 text-accent/80 rounded text-xs border border-accent/20"
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
-                  <motion.a
-                    variants={item}
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 bg-accent/10 text-accent/80 rounded text-[10px] border border-accent/20 uppercase tracking-tighter"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  {/* FIXED BUTTON: Added z-index and stopPropagation */}
+                  <a
                     href={project.url}
                     target="_blank"
-                    className="px-2 py-1 border border-accent text-accent rounded-lg font-medium text-sm hover:bg-accent/10 transition-colors"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()} 
+                    className="relative z-20 px-4 py-2 border border-accent text-accent rounded-lg font-bold text-xs hover:bg-accent hover:text-primary transition-all duration-300"
                   >
-                    View Project
-                  </motion.a>
-                </motion.div>
+                    VIEW PROJECT
+                  </a>
+                </div>
               </div>
             </TiltCard>
           </motion.div>

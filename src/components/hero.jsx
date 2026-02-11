@@ -121,7 +121,7 @@ export default function Hero() {
             whileTap={{ scale: 0.98 }}
             transition={{ type: "spring", stiffness: 300, delay: 0.08 }}
             className="px-6 py-2 border border-accent text-accent rounded-lg font-medium text-sm hover:bg-accent/10 transition-colors"
-            href="/OlaosebikanFavourCV.pdf"
+            href="/DrOlaosebikanFavourCVdev.pdf"
             target="__blank"
           >
             View CV
@@ -131,7 +131,7 @@ export default function Hero() {
             whileTap={{ scale: 0.98 }}
             transition={{ type: "spring", stiffness: 300, delay: 0.12 }}
             className="px-6 py-2 border border-accent text-accent rounded-lg font-medium text-sm hover:bg-accent/10 transition-colors"
-            href="/OlaosebikanFavourCV.pdf"
+            href="/DrOlaosebikanFavourCVdev.pdf"
             download
           >
             Download CV
